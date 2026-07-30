@@ -1,0 +1,64 @@
+<!-- RSVP -->
+<section class="band reveal" id="rsvp" data-only="full">
+  <div class="wrap">
+    <span class="kicker">Please Respond</span>
+    <h2 class="headline">RSVP</h2>
+    <div class="rule"></div>
+    <p class="lede">Kindly respond by April 1, 2027.</p>
+    <form class="form" id="rsvp-form" [formGroup]="form" (ngSubmit)="submit()">
+      <div class="frow">
+        <div class="field"><label for="f-name">Full name</label><input id="f-name" formControlName="name" type="text" autocomplete="name" required /></div>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" formControlName="email" type="email" autocomplete="email" inputmode="email" required /></div>
+      </div>
+      <div class="field">
+        <label id="attend-label">Will you be attending?</label>
+        <div class="toggle" id="toggle" role="radiogroup" aria-labelledby="attend-label">
+          <div
+            [class.active]="form.controls.attending.value === ACCEPTS"
+            [attr.data-val]="ACCEPTS"
+            role="radio"
+            tabindex="0"
+            [attr.aria-checked]="form.controls.attending.value === ACCEPTS ? 'true' : 'false'"
+            (click)="pick(ACCEPTS)"
+            (keydown.enter)="pickKeydown($event, ACCEPTS)"
+            (keydown.space)="pickKeydown($event, ACCEPTS)"
+          >Joyfully accepts</div>
+          <div
+            [class.active]="form.controls.attending.value === DECLINES"
+            [attr.data-val]="DECLINES"
+            role="radio"
+            tabindex="0"
+            [attr.aria-checked]="form.controls.attending.value === DECLINES ? 'true' : 'false'"
+            (click)="pick(DECLINES)"
+            (keydown.enter)="pickKeydown($event, DECLINES)"
+            (keydown.space)="pickKeydown($event, DECLINES)"
+          >Regretfully declines</div>
+        </div>
+      </div>
+      <div class="frow">
+        <div class="field">
+          <label for="f-guests">Guests</label>
+          <select id="f-guests" formControlName="guests">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-meal">Meal</label>
+          <select id="f-meal" formControlName="meal">
+            @for (meal of meals; track meal) {
+              <option [value]="meal">{{ meal }}</option>
+            }
+          </select>
+        </div>
+      </div>
+      <div class="field"><label for="f-note">Song request or note</label><textarea id="f-note" formControlName="note"></textarea></div>
+      <button class="submit" id="f-submit" type="submit" [disabled]="sending() || sent()">
+        {{ sending() ? 'Sending...' : sent() ? 'RSVP Sent' : 'Send RSVP' }}
+      </button>
+      <div class="form-msg" id="f-msg" role="status" aria-live="polite" [style.color]="messageIsError() ? '#f0b8b8' : null">{{ message() }}</div>
+    </form>
+  </div>
+</section>

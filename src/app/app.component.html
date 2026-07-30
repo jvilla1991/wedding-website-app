@@ -1,0 +1,20 @@
+<app-gate [gone]="phase() !== 'gate'" (opened)="onEnvelopeOpened()" />
+
+<app-save-the-date
+  [show]="phase() !== 'gate'"
+  [gone]="phase() === 'site'"
+  (enter)="onEnterSite()"
+/>
+
+<div id="site" [class.show]="phase() === 'site'">
+  <app-hero />
+  <app-nav />
+  <app-welcome />
+  <app-story />
+  <app-details />
+  <app-travel />
+  <app-registry />
+  <app-rsvp />
+  <app-faqs />
+  <app-footer />
+</div>

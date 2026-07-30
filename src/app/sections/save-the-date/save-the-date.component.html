@@ -1,0 +1,10 @@
+<div id="std" [class.show]="show()" [class.gone]="gone()">
+  <div class="std-inner">
+    <span class="std-kicker">Save the Date</span>
+    <div class="std-names">Jeremy Villa<span class="amp">and</span>Jessica Cummings</div>
+    <div class="rule"></div>
+    <div class="std-date">June 5, 2027</div>
+    <div class="std-place">Ferndale, Michigan</div>
+    <button class="btn std-enter" id="std-enter" (click)="enter.emit()">Enter</button>
+  </div>
+</div>
