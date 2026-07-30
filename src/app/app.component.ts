@@ -10,6 +10,7 @@ import { StoryComponent } from './sections/story/story.component';
 import { DetailsComponent } from './sections/details/details.component';
 import { TravelComponent } from './sections/travel/travel.component';
 import { RegistryComponent } from './sections/registry/registry.component';
+import { RsvpComponent } from './sections/rsvp/rsvp.component';
 import { FaqsComponent } from './sections/faqs/faqs.component';
 import { FooterComponent } from './sections/footer/footer.component';
 
@@ -33,6 +34,7 @@ type Phase = 'gate' | 'std' | 'site';
     DetailsComponent,
     TravelComponent,
     RegistryComponent,
+    RsvpComponent,
     FaqsComponent,
     FooterComponent,
   ],
