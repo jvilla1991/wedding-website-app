@@ -1,0 +1,26 @@
+<!-- REGISTRY -->
+<section class="band band--alt reveal" id="registry" data-only="full">
+  <div class="wrap">
+    <span class="kicker">Gifts</span>
+    <h2 class="headline">The Villa Fund</h2>
+    <p class="fund-sub">Soon to be the Villas &mdash; and this is the fund for whatever comes next.</p>
+    <div class="rule"></div>
+    <p class="lede">Your presence at our celebration is truly the greatest gift, and we mean that. We've been lucky to build a home full of the things we need, so if you'd like to give something more, we'd be grateful for a contribution toward our honeymoon and the projects waiting for us at home.</p>
+    <div class="fund">
+      <p class="fund-note">A few easy ways to give:</p>
+      <div class="fund-options">
+        <a class="btn" id="venmo-link" [href]="venmoWeb" [attr.data-venmo-app]="venmoApp" target="_blank" rel="noopener noreferrer" (click)="onVenmoClick($event)">Venmo</a>
+        <button class="btn" type="button" id="zelle-btn" [attr.aria-expanded]="zelleOpen() ? 'true' : 'false'" aria-controls="zelle-reveal" (click)="toggleZelle()">Zelle</button>
+        <a class="btn" href="#" target="_blank" rel="noopener noreferrer">Give Online</a>
+      </div>
+      <div class="zelle-reveal" id="zelle-reveal" [class.open]="zelleOpen()">
+        <p>Send through your bank&rsquo;s app to Jessica Cummings</p>
+        <button class="copy-row" id="copy-zelle" type="button" (click)="copyZelle()">
+          <span class="copy-val">{{ zelleAddress }}</span>
+          <span class="copy-cta" id="copy-cta">{{ copyCta() }}</span>
+        </button>
+      </div>
+      <p class="fund-fine">Gifts are never expected &mdash; we simply cannot wait to celebrate with you.</p>
+    </div>
+  </div>
+</section>

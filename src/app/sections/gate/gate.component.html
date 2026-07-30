@@ -1,0 +1,19 @@
+<div id="gate" [class.gone]="gone()">
+  <div
+    class="env-stage"
+    id="env-stage"
+    role="button"
+    tabindex="0"
+    aria-label="Open invitation"
+    [class.leaving]="leaving()"
+    (click)="open()"
+    (keydown.enter)="onKeydown($event)"
+    (keydown.space)="onKeydown($event)"
+  >
+    <img class="env-img" src="/assets/images/envelope.jpg" alt="Lace wedding invitation envelope" />
+  </div>
+  <div class="gate-cta">
+    <div class="script">You're invited</div>
+    <div class="sub">Click to open</div>
+  </div>
+</div>
