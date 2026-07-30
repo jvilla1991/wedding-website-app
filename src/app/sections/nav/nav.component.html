@@ -1,0 +1,22 @@
+<nav id="nav" [class.open]="open()">
+  <button
+    class="nav-toggle"
+    id="nav-toggle"
+    [attr.aria-expanded]="open() ? 'true' : 'false'"
+    aria-controls="nav-inner"
+    (click)="toggle()"
+  >
+    <span>Menu</span>
+    <span class="bars"><i></i><i></i><i></i></span>
+  </button>
+  <div class="nav-inner" id="nav-inner">
+    <a href="#home" [class.active]="active() === 'home'" (click)="close()">Home</a>
+    <a href="#story" [class.active]="active() === 'story'" (click)="close()">Our Story</a>
+    <a href="#details" data-only="std" [class.active]="active() === 'details'" (click)="close()">Details</a>
+    <a href="#events" data-only="full" [class.active]="active() === 'events'" (click)="close()">Events</a>
+    <a href="#travel" [class.active]="active() === 'travel'" (click)="close()">Travel</a>
+    <a href="#registry" data-only="full" [class.active]="active() === 'registry'" (click)="close()">Registry</a>
+    <a href="#rsvp" data-only="full" [class.active]="active() === 'rsvp'" (click)="close()">RSVP</a>
+    <a href="#faqs" data-only="full" [class.active]="active() === 'faqs'" (click)="close()">FAQs</a>
+  </div>
+</nav>
