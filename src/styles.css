@@ -38,7 +38,7 @@ img{display:block;max-width:100%;}
    the section markup inside lays out exactly as it did as direct siblings. */
 app-gate,app-save-the-date,app-hero,app-nav,app-welcome,app-story,app-details,
 app-travel,app-registry,app-rsvp,app-faqs,app-footer{display:block;}
-/* Sticky positioning must live on the host — a sticky <nav> inside a
+/* Sticky positioning must live on the host. A sticky <nav> inside a
    same-height wrapper would never stick. */
 app-nav{position:sticky;top:0;z-index:40;}
 

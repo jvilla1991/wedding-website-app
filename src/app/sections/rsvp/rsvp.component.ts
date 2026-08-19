@@ -78,7 +78,7 @@ export class RsvpComponent {
           this.form.patchValue({ name: '', email: '', guests: '1', meal: this.meals[0], note: '' });
           this.message.set(
             accepting
-              ? "Thank you — we can't wait to celebrate with you!"
+              ? "Thank you! We can't wait to celebrate with you!"
               : "Thank you for letting us know. You'll be missed!",
           );
           this.sending.set(false);
