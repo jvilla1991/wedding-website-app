@@ -3,7 +3,7 @@ import { Directive, ElementRef, OnDestroy, OnInit, inject } from '@angular/core'
 /**
  * Scroll-reveal ported from the source page: every `.reveal` element gets the
  * `.in` class the first time it intersects the viewport (threshold 0.1), then
- * is unobserved — exactly the source's IntersectionObserver behavior.
+ * is unobserved, exactly matching the source's IntersectionObserver behavior.
  */
 @Directive({ selector: '.reveal' })
 export class RevealDirective implements OnInit, OnDestroy {
