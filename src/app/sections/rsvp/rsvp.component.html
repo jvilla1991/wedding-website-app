@@ -38,24 +38,11 @@
           >Regretfully declines</div>
         </div>
       </div>
-      <div class="frow">
-        <div class="field">
-          <label for="f-guests">Guests</label>
-          <select id="f-guests" formControlName="guests">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="f-meal">Meal</label>
-          <select id="f-meal" formControlName="meal">
-            @for (meal of meals; track meal) {
-              <option [value]="meal">{{ meal }}</option>
-            }
-          </select>
-        </div>
+      <div class="field">
+        <label class="check">
+          <input id="f-plus-one" formControlName="plusOne" type="checkbox" />
+          <span>I'll be bringing a +1</span>
+        </label>
       </div>
       <div class="field"><label for="f-note">Song request or note</label><textarea id="f-note" formControlName="note"></textarea></div>
       <button class="submit" id="f-submit" type="submit" [disabled]="sending() || sent()">

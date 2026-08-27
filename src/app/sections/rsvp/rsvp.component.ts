@@ -23,15 +23,13 @@ export class RsvpComponent {
 
   protected readonly ACCEPTS = ACCEPTS;
   protected readonly DECLINES = DECLINES;
-  protected readonly meals = ['Herb-roasted chicken', 'Braised short rib', 'Mushroom risotto (v)'];
 
   protected readonly form = this.fb.group({
     firstName: ['', Validators.required],
     lastName: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
     attending: [ACCEPTS],
-    guests: ['1'],
-    meal: [this.meals[0]],
+    plusOne: [false],
     note: [''],
   });
 
@@ -71,14 +69,14 @@ export class RsvpComponent {
         name,
         status: accepting ? 'Yes' : 'No',
         email,
-        guestCount: Number(value.guests),
-        mealChoice: value.meal,
+        guestCount: value.plusOne ? 2 : 1,
+        mealChoice: '',
         note: value.note,
       })
       .subscribe({
         next: () => {
           // Reset the visible fields like the source (attendance toggle keeps its state)
-          this.form.patchValue({ firstName: '', lastName: '', email: '', guests: '1', meal: this.meals[0], note: '' });
+          this.form.patchValue({ firstName: '', lastName: '', email: '', plusOne: false, note: '' });
           this.message.set(
             accepting
               ? "Thank you — we can't wait to celebrate with you!"
