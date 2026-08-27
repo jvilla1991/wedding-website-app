@@ -38,12 +38,13 @@
           >Regretfully declines</div>
         </div>
       </div>
-      <div class="field">
-        <label class="check">
-          <input id="f-plus-one" formControlName="plusOne" type="checkbox" />
-          <span>I'll be bringing a +1</span>
-        </label>
-      </div>
+      @if (allowGuest()) {
+        <p class="lede guest-intro">You're welcome to bring a guest — add their name below.</p>
+        <div class="frow">
+          <div class="field"><label for="f-guest-first-name">Guest first name</label><input id="f-guest-first-name" formControlName="guestFirstName" type="text" autocomplete="off" /></div>
+          <div class="field"><label for="f-guest-last-name">Guest last name</label><input id="f-guest-last-name" formControlName="guestLastName" type="text" autocomplete="off" /></div>
+        </div>
+      }
       <div class="field"><label for="f-note">Song request or note</label><textarea id="f-note" formControlName="note"></textarea></div>
       <button class="submit" id="f-submit" type="submit" [disabled]="sending() || sent()">
         {{ sending() ? 'Sending...' : sent() ? 'RSVP Sent' : 'Send RSVP' }}
