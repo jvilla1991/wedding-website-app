@@ -10,5 +10,5 @@ export const environment = {
   production: true,
   apiUrl: '',
   eventId: 0,
-  siteMode: 'full' as SiteMode,
+  siteMode: 'std' as SiteMode,
 };

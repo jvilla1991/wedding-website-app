@@ -7,7 +7,10 @@
     <p class="lede">Kindly respond by April 1, 2027.</p>
     <form class="form" id="rsvp-form" [formGroup]="form" (ngSubmit)="submit()">
       <div class="frow">
-        <div class="field"><label for="f-name">Full name</label><input id="f-name" formControlName="name" type="text" autocomplete="name" required /></div>
+        <div class="field"><label for="f-first-name">First name</label><input id="f-first-name" formControlName="firstName" type="text" autocomplete="given-name" required /></div>
+        <div class="field"><label for="f-last-name">Last name</label><input id="f-last-name" formControlName="lastName" type="text" autocomplete="family-name" required /></div>
+      </div>
+      <div class="frow">
         <div class="field"><label for="f-email">Email</label><input id="f-email" formControlName="email" type="email" autocomplete="email" inputmode="email" required /></div>
       </div>
       <div class="field">
@@ -35,25 +38,13 @@
           >Regretfully declines</div>
         </div>
       </div>
-      <div class="frow">
-        <div class="field">
-          <label for="f-guests">Guests</label>
-          <select id="f-guests" formControlName="guests">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-          </select>
+      @if (allowGuest()) {
+        <p class="lede guest-intro">You're welcome to bring a guest — add their name below.</p>
+        <div class="frow">
+          <div class="field"><label for="f-guest-first-name">Guest first name</label><input id="f-guest-first-name" formControlName="guestFirstName" type="text" autocomplete="off" /></div>
+          <div class="field"><label for="f-guest-last-name">Guest last name</label><input id="f-guest-last-name" formControlName="guestLastName" type="text" autocomplete="off" /></div>
         </div>
-        <div class="field">
-          <label for="f-meal">Meal</label>
-          <select id="f-meal" formControlName="meal">
-            @for (meal of meals; track meal) {
-              <option [value]="meal">{{ meal }}</option>
-            }
-          </select>
-        </div>
-      </div>
+      }
       <div class="field"><label for="f-note">Song request or note</label><textarea id="f-note" formControlName="note"></textarea></div>
       <button class="submit" id="f-submit" type="submit" [disabled]="sending() || sent()">
         {{ sending() ? 'Sending...' : sent() ? 'RSVP Sent' : 'Send RSVP' }}

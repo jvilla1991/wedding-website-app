@@ -292,6 +292,7 @@ nav.open .bars i:nth-child(3){transform:translateY(-5px) rotate(-45deg);}
   color:var(--ivory);padding:.8rem;font-family:inherit;font-size:16px;border-radius:2px;}
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold);}
 .field textarea{resize:vertical;min-height:88px;}
+.guest-intro{margin:.2rem 0 1rem;}
 .toggle{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;}
 @media(max-width:420px){.toggle{grid-template-columns:1fr;}}
 .toggle div{padding:.8rem;text-align:center;border:1px solid var(--line);cursor:pointer;font-size:.85rem;
