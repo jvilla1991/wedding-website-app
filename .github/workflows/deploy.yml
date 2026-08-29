@@ -13,8 +13,9 @@ jobs:
   build-and-deploy:
     name: Build, upload & invalidate
     runs-on: ubuntu-latest
-    # Runs in the "production" GitHub Environment so the OIDC token subject is
-    # repo:<org>/<repo>:environment:production — matching the deploy role's trust.
+    # The job runs in the "production" GitHub Environment so the OIDC token
+    # subject matches the deploy role's trust condition:
+    # repo:<org>/<repo>:environment:production
     environment: production
 
     permissions:
@@ -38,7 +39,7 @@ jobs:
       # Inject the real RSVP API settings into the committed environment.prod.ts.
       # API_URL is the event-rsvp-api base URL; EVENT_ID is the wedding's event id.
       #
-      # IMPORTANT: only fill the two placeholder fields — do NOT rewrite the whole
+      # IMPORTANT: only fill the two placeholder fields. Do NOT rewrite the whole
       # file. The committed environment.prod.ts also carries siteMode and typing
       # that must be preserved; overwriting the file wholesale would break the
       # sed patterns and silently ship a dead RSVP form.
@@ -65,7 +66,7 @@ jobs:
 
       # ── Deploy to S3 ──────────────────────────────────────────────────────────
       # Angular uses outputHashing: "all" in production, so JS/CSS filenames
-      # contain a content hash. Those can be cached indefinitely — only index.html
+      # contain a content hash. Those can be cached indefinitely. Only index.html
       # needs a short TTL so deploys are visible quickly.
 
       - name: Sync dist/ to S3
