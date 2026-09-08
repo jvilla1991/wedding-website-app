@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Open lace invitation envelope">
+  <rect x="1.5" y="1.5" width="61" height="61" rx="14" fill="#241019" stroke="#5b3440" stroke-width="3" />
+
+  <!-- The lifted flap sits behind the invitation card. -->
+  <path d="M9 28 32 7l23 21Z" fill="#f4efe8" stroke="#d7c3bd" stroke-width="2.25" stroke-linejoin="round" />
+  <path d="M17 24.5c2.5-1 3.2-3.7 1.3-5.5 3 .5 5.1-1.1 5.2-4.1 1.8 2.2 4.4 2.3 6.4.3" fill="none" stroke="#d8c6c0" stroke-width="1.35" stroke-linecap="round" />
+  <path d="M47 24.5c-2.5-1-3.2-3.7-1.3-5.5-3 .5-5.1-1.1-5.2-4.1-1.8 2.2-4.4 2.3-6.4.3" fill="none" stroke="#d8c6c0" stroke-width="1.35" stroke-linecap="round" />
+
+  <rect x="8.5" y="26" width="47" height="29" rx="4" fill="#ded2cb" stroke="#d7c3bd" stroke-width="2.25" />
+  <rect x="14" y="18" width="36" height="31" rx="2.5" fill="#fffaf3" stroke="#d7c3bd" stroke-width="1.75" />
+  <path d="M32 25v11m0-8c-2.6-3.4-5.4-2.8-5.7-.2 2.1.8 3.9 1.3 5.7 3.5m0-1.5c2.5-3.5 5.5-2.8 5.7-.2-2 .8-3.9 1.3-5.7 3.5" fill="none" stroke="#a36c76" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M20 40h24" stroke="#d7c3bd" stroke-width="1.5" stroke-linecap="round" />
+
+  <!-- The front pocket stays closed while the upper lip is visibly open. -->
+  <path d="M9 30.5 29.5 46a4 4 0 0 0 5 0L55 30.5V51a4 4 0 0 1-4 4H13a4 4 0 0 1-4-4Z" fill="#f4efe8" stroke="#d7c3bd" stroke-width="2.25" stroke-linejoin="round" />
+  <path d="M13.5 51.5c2.7-.3 4.1-2.1 4.2-4.7 1.8 2.2 4.4 2.3 6.4.4 1 2.7 3.1 4.1 5.9 4.1m20.5.2c-2.7-.3-4.1-2.1-4.2-4.7-1.8 2.2-4.4 2.3-6.4.4-1 2.7-3.1 4.1-5.9 4.1" fill="none" stroke="#d8c6c0" stroke-width="1.3" stroke-linecap="round" />
+</svg>

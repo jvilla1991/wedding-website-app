@@ -9,8 +9,16 @@ export interface RsvpRequest {
   status: 'Yes' | 'No';
   email: string;
   guestCount: number;
-  mealChoice: string;
   note: string;
+  /** Token from the shareable invite link, so the backend marks the invite Accepted/Declined. */
+  inviteToken?: string;
+}
+
+/** Subset of the backend InviteResponse the wedding site cares about. */
+export interface InviteInfo {
+  name: string;
+  /** When true, this recipient may add one guest (a "+1"). */
+  allowGuest: boolean;
 }
 
 @Injectable({ providedIn: 'root' })
@@ -23,5 +31,10 @@ export class RsvpApiService {
       `${environment.apiUrl}/api/events/${environment.eventId}/rsvps`,
       rsvp,
     );
+  }
+
+  /** Look up an invite by its token (public endpoint). Also marks it as viewed. */
+  viewInvite(token: string): Observable<InviteInfo> {
+    return this.http.get<InviteInfo>(`${environment.apiUrl}/api/invites/${token}`);
   }
 }

@@ -16,7 +16,7 @@ export class FaqsComponent {
     },
     {
       q: 'Is there parking?',
-      a: 'Yes — street parking and nearby lots are available around Vester St in downtown Ferndale.',
+      a: 'Yes. Street parking and nearby lots are available around Vester St in downtown Ferndale.',
     },
     {
       q: "Didn't you already get married?",
@@ -28,7 +28,7 @@ export class FaqsComponent {
     },
     {
       q: 'What if my plans change?',
-      a: "Come back to this page and submit a new RSVP — we'll use the most recent one.",
+      a: "Come back to this page and submit a new RSVP. We'll use the most recent one.",
     },
   ];
 
